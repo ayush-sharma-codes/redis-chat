@@ -1,9 +1,11 @@
 import { dataClient } from "../config/redis.js";
 import { insertBulk } from "../repository/message.repository.js";
 import { REDIS_QUEUE_KEY } from "../services/chatService.js";
+import dotenv from 'dotenv'
+dotenv.config()
 
-const BATCH_SIZE = 1000
-const INTERVAL = 2000
+const BATCH_SIZE = process.env.BATCH_SIZE || 1000
+const INTERVAL = process.env.INTERVAL || 2000
 
 const processQueue = async () => {
   try {
@@ -20,5 +22,5 @@ const processQueue = async () => {
 
 export const messageWorker = () => {
   console.log(`Starting message queue worker....`)
-  setInterval(processQueue, INTERVAL)
+  setInterval(processQueue, Number(INTERVAL))
 }
