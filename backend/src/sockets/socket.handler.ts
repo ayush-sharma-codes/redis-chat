@@ -1,6 +1,6 @@
 import { Socket, Server } from 'socket.io'
 
-import { ChatMessage, incomingMessageHandler } from '../services/chatService'
+import { type ChatMessage, incomingMessageHandler } from '../services/chatService.js'
 
 export const chatHandlers = async (io: Server, socket: Socket) => {
     socket.on('joinRoom', (roomId: string) => {

@@ -1,6 +1,6 @@
-import { dataClient } from "../config/redis";
-import { insertBulk } from "../repository/message.repository";
-import { REDIS_QUEUE_KEY } from "../services/chatService";
+import { dataClient } from "../config/redis.js";
+import { insertBulk } from "../repository/message.repository.js";
+import { REDIS_QUEUE_KEY } from "../services/chatService.js";
 
 const BATCH_SIZE = 1000
 const INTERVAL = 2000

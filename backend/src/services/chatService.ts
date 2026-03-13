@@ -1,5 +1,5 @@
 import { Server } from 'socket.io'
-import { dataClient } from '../config/redis'
+import { dataClient } from '../config/redis.js'
 
 export interface ChatMessage {
   senderId: string;

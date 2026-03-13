@@ -1,10 +1,10 @@
 import express from 'express'
 import { createServer } from 'http'
 import { Server } from 'socket.io'
-import { messageWorker } from './workers/message.worker'
-import { socketSetup } from './sockets'
+import { messageWorker } from './workers/message.worker.js'
+import { socketSetup } from './sockets/index.js'
 import dotenv from 'dotenv'
-import { connectMongo } from './config/mongo'
+import { connectMongo } from './config/mongo.js'
 dotenv.config()
 
 const PORT = process.env.PORT || 5000
